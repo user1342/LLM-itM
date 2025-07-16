@@ -62,7 +62,7 @@ response = client.chat.completions.create(
 )
 ```
 
-## Built-in Modules
+## Example Modules
 
 - **Request Logging**: Log all API interactions for debugging
 - **Content Moderation**: Filter inappropriate content in requests/responses  
