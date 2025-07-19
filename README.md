@@ -6,13 +6,9 @@
 <div align="center">
 
 ![GitHub contributors](https://img.shields.io/github/contributors/user1342/LLM-itM)
-![GitHub Repo stars](https://img.shields.io/github/stars/user1342/LLM-itM?style=social)
 ![GitHub last commit](https://img.shields.io/github/last-commit/user1342/LLM-itM)
 
 </div>
-
-
-# LLM-itM
 
 A lightweight proxy server that sits between your applications and LLM APIs (Ollama, OpenAI, etc.), providing configurable request/response processing modules and a web-based configuration interface. Customisable via a port 80 settings page. 
 
