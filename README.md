@@ -82,10 +82,6 @@ This can also be done for a variety of LLM types and endpoints as seen below for
 
 ![Ollama server example](models.png)
 
-# Contributing
-
-Contributions to LLM-itM are welcome! Please see the [Contributing Guidelines](CONTRIBUTING.md) for more information.
-
 # License
 
 See the [LICENSE](LICENSE) file for details.
