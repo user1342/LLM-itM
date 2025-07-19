@@ -60,3 +60,15 @@ response = client.chat.completions.create(
 # Modules
 Modules are used for modifying LLM requests to the API and for modifying responses coming from the API. An example ```pirate_mode``` module is provided in this repository that changes the API request and response message, however, all parts of the request can be modified if required. This module adds ```Respond like a pirate``` to every request and adds ```[Told to respond like a pirate]``` to the end of every response. When viewing the requests in the browser you can see requests and responses before and after modules were applied. 
 
+Below shows running the API and ```simple_interface.py``` with an OpenAI endpoint using the ```pirate_mode``` module:
+
+![Intercepting and modifying LLM requests](changes.gif)
+
+Below shows the same server running with the module disabled:
+
+![Intercepting and not modifying LLM requests](no_changes.gif)
+
+This can also be done for a variety of LLM types and endpoints as seen below for an Ollama server running locally calling llama3.2 and llama3.1:
+
+![Ollama server example](models.png)
+
