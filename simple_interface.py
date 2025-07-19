@@ -19,9 +19,7 @@ def main():
     api_key = input("Enter API Key): ").strip()
 
     if len(api_key) < 1:
-        api_key = 'stub'
-        print("Using stub API key for local Ollama usage. Set your API key for OpenAI or other providers.")
-
+        api_key = ''
 
 
     # Get model (default to common Ollama model)

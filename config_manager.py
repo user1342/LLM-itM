@@ -39,12 +39,6 @@ class ConfigManager:
         
         # Define core application settings
         self.available_settings = [
-            Setting("max_tokens_limit", SettingType.TEXT, "2048", "Maximum tokens allowed (Ollama default)"),
-            Setting("response_format", SettingType.DROPDOWN, "json", "Response format", ["json", "text", "markdown"]),
-            Setting("temperature_override", SettingType.TEXT, "", "Override temperature (leave empty to use request value)"),
-            Setting("system_prompt_prefix", SettingType.TEXT, "", "Prefix to add to system prompts"),
-            Setting("enable_caching", SettingType.BOOLEAN, False, "Enable response caching"),
-            Setting("log_level", SettingType.DROPDOWN, "INFO", "Logging level", ["DEBUG", "INFO", "WARNING", "ERROR"]),
             Setting("llm_provider", SettingType.DROPDOWN, "ollama", "LLM Provider", ["ollama", "openai", "custom"]),
             Setting("default_model", SettingType.TEXT, "llama3.1", "Default model to use")
         ]
