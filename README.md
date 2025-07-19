@@ -84,7 +84,7 @@ This can also be done for a variety of LLM types and endpoints as seen below for
 
 # Contributing
 
-Contributions to Folly are welcome! Please see the [Contributing Guidelines](CONTRIBUTING.md) for more information.
+Contributions to LLM-itM are welcome! Please see the [Contributing Guidelines](CONTRIBUTING.md) for more information.
 
 # License
 
