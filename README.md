@@ -1,3 +1,17 @@
+<p align="center">
+    <img width=100% src="logo.png">
+</p>
+<p align="center">A machine-in-the-middle tool for proxying, inspecting, and modifying traffic sent to and from an OpenAI-compliant endpoint</p>
+
+<div align="center">
+
+![GitHub contributors](https://img.shields.io/github/contributors/user1342/LLM-itM)
+![GitHub Repo stars](https://img.shields.io/github/stars/user1342/LLM-itM?style=social)
+![GitHub last commit](https://img.shields.io/github/last-commit/user1342/LLM-itM)
+
+</div>
+
+
 # LLM-itM
 
 A lightweight proxy server that sits between your applications and LLM APIs (Ollama, OpenAI, etc.), providing configurable request/response processing modules and a web-based configuration interface. Customisable via a port 80 settings page. 
@@ -72,3 +86,10 @@ This can also be done for a variety of LLM types and endpoints as seen below for
 
 ![Ollama server example](models.png)
 
+# Contributing
+
+Contributions to Folly are welcome! Please see the [Contributing Guidelines](CONTRIBUTING.md) for more information.
+
+# License
+
+See the [LICENSE](LICENSE) file for details.
