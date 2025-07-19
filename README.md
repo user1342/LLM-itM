@@ -1,14 +1,6 @@
 # LLM-itM
 
-A lightweight proxy server that sits between your applications and LLM APIs (Ollama, OpenAI, etc.), providing configurable request/response processing modules and a web-based configuration interface.
-
-## Purpose
-
-This tool allows you to:
-- Add custom processing to LLM requests/responses (logging, content filtering, etc.)
-- Switch between different LLM providers without changing your application code
-- Configure and monitor LLM interactions through a web interface
-- Maintain OpenAI API compatibility while adding custom functionality
+A lightweight proxy server that sits between your applications and LLM APIs (Ollama, OpenAI, etc.), providing configurable request/response processing modules and a web-based configuration interface. Customisable via a port 80 settings page. 
 
 ## Installation & Setup
 
@@ -17,35 +9,38 @@ This tool allows you to:
    pip install -r requirements.txt
    ```
 
-2. **Configure LLM Provider** (choose one):
-
-   **For Ollama (default):**
-   ```bash
-   # Install Ollama from https://ollama.ai/
-   ollama pull llama3.1  # Download a model
-   ```
-
-   **For OpenAI:**
-   ```bash
-   # Set environment variables
-   export OPENAI_API_KEY=your_api_key_here
-   export OPENAI_BASE_URL=https://api.openai.com/v1
-   ```
-
 3. **Run the Server**:
    ```bash
    python app.py
    ```
 
-4. **Configure Settings**:
+2. **Configure LLM Provider** (choose one):
+
+- `--host`  
+  LLM API base URL (default: `http://localhost:11434/v1` for Ollama)
+
+- `--api-key`  
+  API key for the LLM service (default: `None` for Ollama)
+
+- `--listen-host`  
+  Host to bind the proxy server to (default: `0.0.0.0`)
+
+- `--listen-port`  
+  Port to bind the proxy server to (default: `5000`)
+
+- `--debug`  
+  Enable debug mode
+
+
+4. **Configure Settings and View Traffic**:
    - Open `http://localhost:5000` in your browser
-   - Enable/disable modules and adjust settings as needed
+   - Enable/disable modules, adjust settings, and view traffic
 
 ## Usage
 
-Point your applications to the proxy instead of the LLM directly:
+Point your applications to the proxy instead of the LLM directly - an example can be seen in ```simple_interface.py```:
 
-**Base URL:** `http://localhost:5000/v1`
+**Base URL Default:** `http://localhost:5000/v1`
 
 **Example with OpenAI Python library:**
 ```python
@@ -62,19 +57,6 @@ response = client.chat.completions.create(
 )
 ```
 
-## Example Modules
+# Modules
+Modules are used for modifying LLM requests to the API and for modifying responses coming from the API. An example ```pirate_mode``` module is provided in this repository that changes the API request and response message, however, all parts of the request can be modified if required. This module adds ```Respond like a pirate``` to every request and adds ```[Told to respond like a pirate]``` to the end of every response. When viewing the requests in the browser you can see requests and responses before and after modules were applied. 
 
-- **Request Logging**: Log all API interactions for debugging
-- **Content Moderation**: Filter inappropriate content in requests/responses  
-- **Response Filtering**: Modify requests (temperature, max tokens, system prompts)
-
-## API Endpoints
-
-- `GET /` - Web configuration interface
-- `POST /v1/chat/completions` - Chat completions (OpenAI compatible)
-- `GET /v1/models` - List available models
-- `GET /health` - Health check
-
-## Configuration
-
-Settings are automatically saved to `config.json` and can be modified through the web interface at `http://localhost:5000`.
