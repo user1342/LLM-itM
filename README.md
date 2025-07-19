@@ -1,4 +1,4 @@
-# LLM Proxy Server
+# LLM-itM
 
 A lightweight proxy server that sits between your applications and LLM APIs (Ollama, OpenAI, etc.), providing configurable request/response processing modules and a web-based configuration interface.
 
