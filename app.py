@@ -1474,4 +1474,4 @@ if __name__ == '__main__':
     logger.info(f"API base URL: http://{host}:{port}/v1")
     logger.info(f"Live Monitor: http://{host}:{port}/monitor")
     
-    socketio.run(app, host=host, port=port, debug=debug)
+    socketio.run(app, host=host, port=port, debug=debug, allow_unsafe_werkzeug=True)
